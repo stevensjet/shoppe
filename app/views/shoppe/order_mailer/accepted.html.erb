@@ -2,11 +2,15 @@
 
 Re: Order #<%=@order.number%>
 
-<p>We're pleased to let you know that we have accepted your order and your payment of <%=number_to_currency @order.total%> has been processed successfully.</p>
+<p>We are pleased to let you know that we have accepted your order and your payment of <%=number_to_currency @order.total%> has been processed successfully.</p>
 
 We will e-mail you again when your order has been shipped.
 
-thank you,
+Thank you for your order,
+
+<br />
+<br />
 
 <%=Shoppe.settings.store_name%>
+<br />
 <%=Shoppe.settings.email_address%>

@@ -2,6 +2,8 @@
 
 Hello <%= order.first_name%>!
 
+We are pleased to let you know that we have received your order. A JetStreamIQ representative will contact you as soon as possible. 
+
 Re: Order #<%= order.number%>
 
 Order summary
@@ -26,9 +28,7 @@ Email:           <%= order.email_address %>
 Billing Address: <%= order.billing_address1 %>
       			 <%= order.billing_address2 %>, <%= order.billing_address3 %> <%= order.billing_address4 %>
 
-We're pleased to let you know that we have received your order. A JetStreamIQ representative will contact you as soon as possible. 
-
-Thanks you,
+Thank you for your order,
 
 <%=Shoppe.settings.store_name%>
 <%=Shoppe.settings.email_address%>
