@@ -1,4 +1,4 @@
-Hello <%=@order.first_name%>!
+<h2>Hello <%=@order.first_name%>!</h2>
 
 <br /><br />
 
@@ -9,14 +9,12 @@ Re: Order #<%=@order.number%>
 
 <%= render 'items', :order => @order %>
 
-<br />
+<p>We're pleased to let you know that we have received your order. A JetStreamIQ representative will contact you as soon as possible.</p>
 
-We're pleased to let you know that we have received your order. A JetStreamIQ representative will contact you as soon as possible. 
-
-<br />
 <br />
 
 Thanks you,
+<br />
 <br />
 <%=Shoppe.settings.store_name%>
 <br />
