@@ -3,11 +3,11 @@
     <caption>Order summary</caption>
     <thead>
       <tr>
-        <strong><td>IQ Power System</td>
-        <td colpan='2'>Quantity</td>
-        <td colpan='2'>Sub-Total</td>
-        <td colpan='2'>Tax</td>
-        <td colpan='2'>Total</td></strong>
+        <td>IQ Power System</td>
+        <td>Quantity</td>
+        <td>Sub-Total</td>
+        <td>Tax</td>
+        <td>Total</td>
       </tr>
     </thead>
     <tbody>
@@ -15,10 +15,10 @@
       <% items = (pluralize item.quantity, "Item") %>
       <tr>
         <td colpan='2'><%= item.ordered_item.full_name %></td>
-        <td colpan='2'><%= item.quantity %></td>
-        <td colpan='2'><%= number_to_currency item.sub_total %></td>
-        <td colpan='2'><%= number_to_currency item.tax_amount %></td>
-        <td colpan='2'><%= number_to_currency item.total %></td>
+        <td><%= item.quantity %></td>
+        <td><%= number_to_currency item.sub_total %></td>
+        <td><%= number_to_currency item.tax_amount %></td>
+        <td><%= number_to_currency item.total %></td>
       </tr>
       <% end %>
 
