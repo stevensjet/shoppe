@@ -3,11 +3,11 @@
     <caption>Order summary</caption>
     <thead>
       <tr>
-        <td>IQ Power System</td>
-        <td>Quantity</td>
-        <td class="hidden-xs">Sub-Total</td>
-        <td class="hidden-xs">Tax</td>
-        <td>Total</td>
+        <strong><td colpan='2'>IQ Power System</td>
+        <td colpan='2'>Quantity</td>
+        <td colpan='2'>Sub-Total</td>
+        <td colpan='2'>Tax</td>
+        <td colpan='2'>Total</td></strong>
       </tr>
     </thead>
     <tbody>
@@ -16,8 +16,8 @@
       <tr>
         <td><%= item.ordered_item.full_name %></td>
         <td><%= item.quantity %></td>
-        <td class="hidden-xs"><%= number_to_currency item.sub_total %></td>
-        <td class="hidden-xs"><%= number_to_currency item.tax_amount %></td>
+        <td><%= number_to_currency item.sub_total %></td>
+        <td><%= number_to_currency item.tax_amount %></td>
         <td><%= number_to_currency item.total %></td>
       </tr>
       <% end %>
@@ -25,18 +25,15 @@
     </tbody>
     <tfoot>
       <tr>
-        <td class="hidden-xs" colspan='4'>Sub-Total</td>
-        <td class="hidden-sm hidden-md hidden-lg" colspan='2'>Sub-Total</td>
+        <td colspan='2'>Sub-Total</td>
         <td colspan='2'><%= number_to_currency order.total_before_tax %></td>
       </tr>
       <tr>
-        <td class="hidden-xs" colspan='4'>Tax</td>
-        <td class="hidden-sm hidden-md hidden-lg" colspan='2'>Tax</td>
+        <td colspan='2'>Tax</td>
         <td colspan='2'><%= number_to_currency order.tax %></td>
       </tr>
       <tr>
-        <td class="hidden-xs" colspan='4'>Total</td>
-        <td class="hidden-sm hidden-md hidden-lg" colspan='2'>Total</td>
+        <td colspan='2'>Total</td>
         <td colspan='2'><%= number_to_currency order.total %></td>
       </tr>
     </tfoot>

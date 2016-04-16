@@ -1,12 +1,21 @@
 Hello <%=@order.first_name%>!
 
+<br /><br />
+
 Re: Order #<strong><%=@order.number%></strong>
+
+<br />
+<br />
 
 <%= render 'items', :order => @order %>
 
+<br />
+
 We're pleased to let you know that we have received your order. A JetStreamIQ representative will contact you as soon as possible. 
 
-Thanks so much for your order,
+<br />
 
+Thanks you,
+<br />
 <%=Shoppe.settings.store_name%>
 <%=Shoppe.settings.email_address%>
