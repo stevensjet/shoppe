@@ -2,7 +2,7 @@ Hello <%=@order.first_name%>!
 
 Re: Order #<%=@order.number%>
 
-<% order.order_items.each do |item| %>
+<% @order.order_items.each do |item| %>
 	<%= item.ordered_item.full_name %>
 <% end %>
 
