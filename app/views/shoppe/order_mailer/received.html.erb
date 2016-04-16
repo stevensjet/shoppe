@@ -1,10 +1,8 @@
 Hello <%=@order.first_name%>!
 
-Re: Order #<%=@order.number%>
+Re: Order #<strong><%=@order.number%></strong>
 
-<% @order.order_items.each do |item| %>        
-<%= item.ordered_item.full_name %>
-<% end %>
+<%= render 'items', :order => @order %>
 
 We're pleased to let you know that we have received your order. A JetStreamIQ representative will contact you as soon as possible. 
 
