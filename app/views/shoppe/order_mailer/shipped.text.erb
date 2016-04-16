@@ -2,15 +2,9 @@ Hello <%=@order.first_name%>!
 
 Re: Order #<%=@order.number%>
 
-We're pleased to let you know your order has been shipped and
-will be with you shortly!
+We're pleased to let you know your order has been shipped! 
 
-<% if @order.delivery_service && @order.courier_tracking_url -%>
-You can track the delivery online at:
-<%=@order.courier_tracking_url%>
-<% end -%>
-
-Many thanks,
+thank you,
 
 <%=Shoppe.settings.store_name%>
 <%=Shoppe.settings.email_address%>

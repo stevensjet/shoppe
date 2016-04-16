@@ -1,13 +1,13 @@
 <h2 style="color:#194681">Hello <%=@order.first_name%>!</h2>
 
+<p>We're pleased to let you know that we have received your order. A JetStreamIQ representative will contact you as soon as possible.</p>
+
 Re: Order #<%=@order.number%>
 
 <br />
 <br />
 
 <%= render 'items', :order => @order %>
-
-<p>We're pleased to let you know that we have received your order. A JetStreamIQ representative will contact you as soon as possible.</p>
 
 <br />
 

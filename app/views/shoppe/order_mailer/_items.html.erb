@@ -13,7 +13,7 @@
   <tbody>
     <% order.order_items.each do |item| %>
     <tr>
-      <td colpan='3'><%= item.ordered_item.full_name %></td>
+      <td><%= item.ordered_item.full_name %></td>
       <td><%= item.quantity %></td>
       <td><%= number_to_currency item.sub_total %></td>
       <td><%= number_to_currency item.tax_amount %></td>

@@ -1,0 +1,12 @@
+<h2 style="color:#194681">Hello <%= @order.first_name%>!</h2>
+
+Re: Order #<%=@order.number%>
+
+<p>We're pleased to let you know that we have accepted your order and your payment of <%=number_to_currency @order.total%> has been processed successfully.</p>
+
+We will e-mail you again when your order has been shipped.
+
+thank you,
+
+<%=Shoppe.settings.store_name%>
+<%=Shoppe.settings.email_address%>
