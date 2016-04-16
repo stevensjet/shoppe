@@ -1,6 +1,8 @@
-Hello <%=@order.first_name%>!
+<% order = @order %>
 
-Re: Order #<%=@order.number%>
+Hello <%= order.first_name%>!
+
+Re: Order #<%= order.number%>
 
 Order summary
 
