@@ -2,13 +2,31 @@ Hello <%=@order.first_name%>!
 
 Re: Order #<%=@order.number%>
 
-<% @order.order_items.each do |item| %>        
-<%= item.ordered_item.full_name %>
+Order summary
+
+
+IQ Power System   Quantity   Sub-Total   Tax   Total
+<% order.order_items.each do |item| %>
+<%= item.ordered_item.full_name %>	<%= item.quantity %>	<%= number_to_currency item.sub_total %>	<%= number_to_currency item.tax_amount %>	<%= number_to_currency item.total %>
 <% end %>
+   
+Sub-Total		<%= number_to_currency order.total_before_tax %>
+Tax             <%= number_to_currency order.tax %> 
+Total           <%= number_to_currency order.total %>
+   
+
+Your Info
+
+Name:            <%= order.first_name %> <%= order.last_name %>
+Company:         <%= order.company %>
+Phone #:         <%= order.phone_number %>
+Email:           <%= order.email_address %>
+Billing Address: <%= order.billing_address1 %>
+      			 <%= order.billing_address2 %>, <%= order.billing_address3 %> <%= order.billing_address4 %>
 
 We're pleased to let you know that we have received your order. A JetStreamIQ representative will contact you as soon as possible. 
 
-Thanks so much for your order,
+Thanks you,
 
 <%=Shoppe.settings.store_name%>
 <%=Shoppe.settings.email_address%>

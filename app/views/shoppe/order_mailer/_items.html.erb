@@ -12,7 +12,6 @@
   <br />
   <tbody>
     <% order.order_items.each do |item| %>
-    <% items = (pluralize item.quantity, "Item") %>
     <tr>
       <td colpan='3'><%= item.ordered_item.full_name %></td>
       <td><%= item.quantity %></td>
@@ -66,7 +65,7 @@
     </tr>
     <tr>
       <td></td>
-      <td><%= order.billing_address2 %> <%= order.billing_address3 %></td>
+      <td><%= order.billing_address2 %>, <%= order.billing_address3 %> <%= order.billing_address4 %></td>
     </tr>
     
   </tbody>
