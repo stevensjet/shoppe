@@ -3,13 +3,14 @@
     <caption>Order summary</caption>
     <thead>
       <tr>
-        <td>IQ Power System</td>
-        <td>Quantity</td>
-        <td>Sub-Total</td>
-        <td>Tax</td>
-        <td>Total</td>
+        <td><strong>IQ Power System</strong></td>
+        <td><strong>Quantity</strong></td>
+        <td><strong>Sub-Total</strong></td>
+        <td><strong>Tax</strong></td>
+        <td><strong>Total</strong></td>
       </tr>
     </thead>
+    <br />
     <tbody>
       <% order.order_items.each do |item| %>
       <% items = (pluralize item.quantity, "Item") %>
@@ -21,7 +22,7 @@
         <td><%= number_to_currency item.total %></td>
       </tr>
       <% end %>
-
+      
     </tbody>
     <tfoot>
       <tr>
