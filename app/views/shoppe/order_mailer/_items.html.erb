@@ -44,7 +44,7 @@
   <tbody>
     <tr>
       <td>Name:</td>
-      <td><%= order.first_name %><%= order.last_name %></td>
+      <td><%= order.first_name %> <%= order.last_name %></td>
     </tr>
     <tr>
       <td>Company:</td>
@@ -61,10 +61,13 @@
     <tr>
       <td>Billing Address</td>
       <td>
-        <%= order.billing_address1 %><br>
-        <%= order.billing_address2 %><br>
-        <%= order.billing_address3 %>
+        <%= order.billing_address1 %>
       </td>
     </tr>
+    <tr>
+      <td></td>
+      <td><%= order.billing_address2 %> <%= order.billing_address3 %></td>
+    </tr>
+    
   </tbody>
 </table>
