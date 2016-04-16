@@ -1,0 +1,47 @@
+<div class='row'>
+  <table class = "table table-striped table-bordered table-hover order-table col-xs-12">
+    <caption>Order summary</caption>
+    <thead>
+      <tr>
+        <td>IQ Power System</td>
+        <td>Quantity</td>
+        <td class="hidden-xs">Sub-Total</td>
+        <td class="hidden-xs">Tax</td>
+        <td>Total</td>
+        <td>Remove item</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% order.order_items.each do |item| %>
+      <% items = (pluralize item.quantity, "Item") %>
+      <tr>
+        <td><%= item.ordered_item.full_name %></td>
+        <td><%= item.quantity %> <%= link_to "<span class='glyphicon glyphicon-plus add-sub'></span>".html_safe, adjust_order_item_quantity_path(item.id), :method => :post %><%= link_to "<span class='glyphicon glyphicon-minus add-sub'></span>".html_safe, adjust_order_item_quantity_path(item.id), :method => :delete %></td>
+
+        <td class="hidden-xs"><%= number_to_currency item.sub_total %></td>
+        <td class="hidden-xs"><%= number_to_currency item.tax_amount %></td>
+        <td><%= number_to_currency item.total %></td>
+        <td><%= link_to "<button class='btn btn-warning width-100'><span class='glyphicon glyphicon-trash trash-glyph'></span><span class='hidden-xs'>Remove</span> #{items}</button>".html_safe, remove_path(item), :method => :delete %></td>
+      </tr>
+      <% end %>
+
+    </tbody>
+    <tfoot>
+      <tr>
+        <td class="hidden-xs" colspan='4'>Sub-Total</td>
+        <td class="hidden-sm hidden-md hidden-lg" colspan='2'>Sub-Total</td>
+        <td colspan='2'><%= number_to_currency order.total_before_tax %></td>
+      </tr>
+      <tr>
+        <td class="hidden-xs" colspan='4'>Tax</td>
+        <td class="hidden-sm hidden-md hidden-lg" colspan='2'>Tax</td>
+        <td colspan='2'><%= number_to_currency order.tax %></td>
+      </tr>
+      <tr>
+        <td class="hidden-xs" colspan='4'>Total</td>
+        <td class="hidden-sm hidden-md hidden-lg" colspan='2'>Total</td>
+        <td colspan='2'><%= number_to_currency order.total %></td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
