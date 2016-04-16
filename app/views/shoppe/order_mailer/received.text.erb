@@ -2,11 +2,13 @@ Hello <%=@order.first_name%>!
 
 Re: Order #<%=@order.number%>
 
-We're pleased to let you know that we have received your order and one of our team will be accepting it shortly.
+<% order.order_items.each do |item| %>
+	<%= item.ordered_item.full_name %>
+<% end %>
 
-We will e-mail you again when your order has been accepted.
+We're pleased to let you know that we have received your order. A JetStreamIQ representative will contact you as soon as possible. 
 
-Many thanks,
+Thanks so much for your order,
 
 <%=Shoppe.settings.store_name%>
 <%=Shoppe.settings.email_address%>
