@@ -11,11 +11,9 @@ Order summary
 
 IQ Power System   Quantity   Sub-Total   Tax   Total
 <% order.order_items.each do |item| %>
-<%= item.ordered_item.full_name %>	<%= item.quantity %>	<%= number_to_currency item.sub_total %>	<%= number_to_currency item.tax_amount %>	<%= number_to_currency item.total %>
+<%= item.ordered_item.full_name %>	<%= item.quantity %>	<%= number_to_currency item.total %>
 <% end %>
    
-Sub-Total		<%= number_to_currency order.total_before_tax %>
-Tax             <%= number_to_currency order.tax %> 
 Total           <%= number_to_currency order.total %>
    
 

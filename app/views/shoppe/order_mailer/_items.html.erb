@@ -4,8 +4,6 @@
     <tr>
       <td><strong>IQ Power System</strong></td>
       <td><strong>Quantity</strong></td>
-      <td><strong>Sub-Total</strong></td>
-      <td><strong>Tax</strong></td>
       <td><strong>Total</strong></td>
     </tr>
   </thead>
@@ -15,22 +13,12 @@
     <tr>
       <td><%= item.ordered_item.full_name %></td>
       <td><%= item.quantity %></td>
-      <td><%= number_to_currency item.sub_total %></td>
-      <td><%= number_to_currency item.tax_amount %></td>
       <td><%= number_to_currency item.total %></td>
     </tr>
     <% end %>
     
   </tbody>
   <tfoot>
-    <tr>
-      <td colspan='2'>Sub-Total</td>
-      <td colspan='2'><%= number_to_currency order.total_before_tax %></td>
-    </tr>
-    <tr>
-      <td colspan='2'>Tax</td>
-      <td colspan='2'><%= number_to_currency order.tax %></td>
-    </tr>
     <tr>
       <td colspan='2'>Total</td>
       <td colspan='2'><%= number_to_currency order.total %></td>
